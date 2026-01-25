@@ -8,13 +8,13 @@ const PORT = process.env.PORT || 8080;
 // Helper functions
 function getLLMEndpoint() {
     // Use Docker Model Runner injected variables
-    const llamaUrl = process.env.LLAMA_URL;
-    return `${llamaUrl}/chat/completions`;
+    const smollm2URL = process.env.SMOLLM2_URL;
+    return `${smollm2URL}/chat/completions`;
 }
 
 function getModelName() {
     // Use Docker Model Runner injected variables
-    return process.env.LLAMA_MODEL;
+    return process.env.SMOLLM2_MODEL;
 }
 
 // Middleware
@@ -97,4 +97,3 @@ app.listen(PORT, () => {
     console.log(`Using LLM endpoint: ${getLLMEndpoint()}`);
     console.log(`Using model: ${getModelName()}`);
 });
-
